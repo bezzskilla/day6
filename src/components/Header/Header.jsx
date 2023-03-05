@@ -1,8 +1,17 @@
-function Header() {
+// function Header(props) {
+function Header({ countInHeader, asdasd }) {
 
+  console.log('Header render');
 
   return (
-    <header>Header</header>
+    <>
+      <header>Header</header>
+      {asdasd}
+
+      <hr />
+      {countInHeader}
+      <hr />
+    </>
   )
 }
 

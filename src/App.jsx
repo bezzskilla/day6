@@ -5,37 +5,19 @@ import Main from './components/Main';
 import { useState } from 'react';
 
 //компонент ререндерится при изменении внутреннего состояния
+//компонент ререндерится при изменении props
+//компонент ререндерится при ререндере родительского компонента
 
 function App() {
   const [count, setCount] = useState(0)
 
-  const incrementClick = () => {
-    // setCount(newState)
-    setCount((prev) => prev + 1)
-  }
-
-  console.log('render');
-
-  // let exCount = 0;
+  console.log('APP render');
 
   return (
     <div className="App">
-      <Header />
+      <Header countInHeader={count} asdasd={2} />
 
-      <hr />
-      {count}
-      <hr />
-
-      <button onClick={incrementClick} >Plus one</button>
-      <button onClick={() => setCount((prev) => prev - 1)} >Minus one</button>
-
-      <hr />
-
-      {/* {exCount}
-      BAD PRACTICE
-      <button onClick={() => exCount++} >Plus one</button> */}
-
-      <Main />
+      <Main setCount={setCount} />
 
       <Footer />
     </div>

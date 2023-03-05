@@ -1,6 +1,18 @@
-const Main = () => {
+const Main = ({ setCount }) => {
+  const incrementClick = () => {
+    setCount((prev) => prev + 1)
+  }
+
   return (
-    <main>Main</main>
+    <>
+      <button onClick={incrementClick} >Plus one</button>
+      <button
+        onClick={() => setCount((prev) => prev - 1)}
+      >
+        Minus one
+      </button>
+      <main>Main</main>
+    </>
   )
 }
 
